@@ -4,6 +4,12 @@
 
 ![BetterComments example](./img/bettercomments-example.png)
 
+* `*` - важная информация.
+* `?` - вопрос.
+* `!` - важное предупреждение.
+* `TODO` - требуется доделать/реализовать.
+
+
 # Конфигурация Vim.
 
 Включение BetterComments по команде `\r`.
