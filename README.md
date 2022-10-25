@@ -12,9 +12,9 @@
 
 # Возможная конфигурация Vim.
 
-Включение BetterComments по команде `\r`.
+Включение BetterComments по команде `\bc`.
 
-    nnoremap <buffer> <localleader>r :call bettercomments#Enable()<cr>
+    nnoremap <buffer> <localleader>bc :call bettercomments#Enable()<cr>
 
 Автоматический запуск во всех файлах.
 
