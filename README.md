@@ -60,3 +60,11 @@
 * Magenta, LightMagenta
 * Yellow, LightYellow
 * White
+
+Если нужный язык отсутсвует в стандартной конфигурации,
+можно добавить его самостоятельно.
+
+    let g:delimiter_filetype_custom = {
+        \ '<filetype>'        :   {'left' : '<comment_symbol>'},
+        \ }
+
