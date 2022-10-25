@@ -1,11 +1,29 @@
 let g:delimiter_filetype = {
-    \ 'cpp'         :   {'left_comment' : '/\/'},
-    \ 'c'           :   {'left_comment' : '/\/'},
-    \ 'cs'          :   {'left_comment' : '/\/'},
-    \ 'sh'          :   {'left_comment' : '#'},
-    \ 'javascript'  :   {'left_comment' : '/\/'},
-    \ 'python'      :   {'left_comment' : '#'},
-    \ 'vim'         :   {'left_comment' : '"'},
+    \ 'cpp'          :   {'left' : '/\/'},
+    \ 'c'            :   {'left' : '/\/'},
+    \ 'cs'           :   {'left' : '/\/'},
+    \ 'sh'           :   {'left' : '#'},
+    \ 'javascript'   :   {'left' : '/\/'},
+    \ 'typescript'   :   {'left' : '/\/'},
+    \ 'python'       :   {'left' : '#'},
+    \ 'vim'          :   {'left' : '"'},
+    \ 'java'         :   {'left' : '/\/'},
+    \ 'php'          :   {'left' : '/\/'},
+    \ 'go'           :   {'left' : '/\/'},
+    \ 'dart'         :   {'left' : '/\/'},
+    \ 'scala'        :   {'left' : '/\/'},
+    \ 'dockerfile'   :   {'left' : '#'},
+    \ 'yaml.ansible' :   {'left' : '#'},
+    \ 'yaml'         :   {'left' : '#'},
+    \ 'puppet'       :   {'left' : '#'},
+    \ 'awk'          :   {'left' : '#'},
+    \ 'sql'          :   {'left' : '--'},
+    \ 'terraform'    :   {'left' : '#'},
+    \ 'ruby'         :   {'left' : '#'},
+    \ 'kotlin'       :   {'left' : '/\/'},
+    \ 'r'            :   {'left' : '#'},
+    \ 'rust'         :   {'left' : '/\/'},
+    \ 'nginx'        :   {'left' : '#'},
     \ }
 
 
@@ -27,6 +45,10 @@ let g:delimiter_filetype = {
 " Todo this is a comment 
 
 
+if exists('g:delimiter_filetype_custom')
+    call extend(g:delimiter_filetype, g:delimiter_filetype_custom)
+endif
+
 function! bettercomments#Enable()
     if &filetype == ''
         echo "BetterComments: file doesn't have file type"
@@ -38,7 +60,7 @@ function! bettercomments#Enable()
         return 2
     endif
 
-    let comment_symbol = g:delimiter_filetype[&filetype]['left_comment']
+    let comment_symbol = g:delimiter_filetype[&filetype]['left']
     let start_pattern = '\v\c\s*\' . comment_symbol
     let information_pattern = '\s*\*' 
     let question_pattern = '\s*\?' 
