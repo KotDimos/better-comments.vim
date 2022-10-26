@@ -86,15 +86,15 @@ function! bettercomments#Enable()
     execute 'syntax region BetterCommentsTODO start=/' . start_pattern . todo_pattern . '/ end=/$/'
     execute 'highlight BetterCommentsTODO ctermfg=' . g:todo_color_ctermfg
     execute 'highlight BetterCommentsTODO guifg=' . g:todo_color_guifg
-
+    
 endfunction
 
 function! bettercomments#Disable()
 
-    highlight clear BetterCommentsOther 
-    highlight clear BetterCommentsInformation
-    highlight clear BetterCommentsQuestion
-    highlight clear BetterCommentsAttention
-    highlight clear BetterCommentsTODO
+    syntax clear BetterCommentsOther
+    syntax clear BetterCommentsInformation
+    syntax clear BetterCommentsQuestion
+    syntax clear BetterCommentsAttention
+    syntax clear BetterCommentsTODO
     
 endfunction
