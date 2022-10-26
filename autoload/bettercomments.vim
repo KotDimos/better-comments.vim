@@ -14,6 +14,7 @@ let g:delimiter_filetype = {
     \ 'scala'        :   {'left' : '/\/'},
     \ 'dockerfile'   :   {'left' : '#'},
     \ 'yaml.ansible' :   {'left' : '#'},
+    \ 'yaml.docker-compose' :   {'left' : '#'},
     \ 'yaml'         :   {'left' : '#'},
     \ 'puppet'       :   {'left' : '#'},
     \ 'awk'          :   {'left' : '#'},
