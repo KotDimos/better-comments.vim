@@ -24,7 +24,7 @@
 
     autocmd BufReadPost *.py call bettercomments#Enable()
 
-Базовые цвета.
+Дефолтные цвета.
 
     let g:other_color_guifg = 'green'
     let g:information_color_guifg = 'yellow'
@@ -34,7 +34,7 @@
 
 Изменение цвета.
 
-Изменение цвета на базовый цвет.
+Изменение цвета на стандартный цвет в vim.
 
     let g:other_color_guifg = 'magenta'
 
@@ -61,7 +61,7 @@
 * Yellow, LightYellow
 * White
 
-Если нужный язык отсутсвует в стандартной конфигурации,
+Если нужный язык отсутствует в стандартной конфигурации,
 можно добавить его самостоятельно.
 
     let g:delimiter_filetype_custom = {
