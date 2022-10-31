@@ -66,5 +66,6 @@
 
     let g:delimiter_filetype_custom = {
         \ '<filetype>'        :   {'left' : '<comment_symbol>'},
+        \ '<filetype>'        :   {'left' : '<comment_symbol>', 'right' : '<closing_comment_symbol>'},
         \ }
 
