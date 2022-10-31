@@ -1,30 +1,30 @@
 let g:delimiter_filetype = {
-    \ 'cpp'                 :   {'left' : '/\/', 'right' : '$'},
-    \ 'c'                   :   {'left' : '/\/', 'right' : '$'},
-    \ 'cs'                  :   {'left' : '/\/', 'right' : '$'},
-    \ 'sh'                  :   {'left' : '#', 'right' : '$'},
-    \ 'javascript'          :   {'left' : '/\/', 'right' : '$'},
-    \ 'typescript'          :   {'left' : '/\/', 'right' : '$'},
-    \ 'python'              :   {'left' : '#', 'right' : '$'},
-    \ 'vim'                 :   {'left' : '"', 'right' : '$'},
-    \ 'java'                :   {'left' : '/\/', 'right' : '$'},
-    \ 'php'                 :   {'left' : '/\/', 'right' : '$'},
-    \ 'go'                  :   {'left' : '/\/', 'right' : '$'},
-    \ 'dart'                :   {'left' : '/\/', 'right' : '$'},
-    \ 'scala'               :   {'left' : '/\/', 'right' : '$'},
-    \ 'dockerfile'          :   {'left' : '#', 'right' : '$'},
-    \ 'yaml.ansible'        :   {'left' : '#', 'right' : '$'},
-    \ 'yaml.docker-compose' :   {'left' : '#', 'right' : '$'},
-    \ 'yaml'                :   {'left' : '#', 'right' : '$'},
-    \ 'puppet'              :   {'left' : '#', 'right' : '$'},
-    \ 'awk'                 :   {'left' : '#', 'right' : '$'},
-    \ 'sql'                 :   {'left' : '--', 'right' : '$'},
-    \ 'terraform'           :   {'left' : '#', 'right' : '$'},
-    \ 'ruby'                :   {'left' : '#', 'right' : '$'},
-    \ 'kotlin'              :   {'left' : '/\/', 'right' : '$'},
-    \ 'r'                   :   {'left' : '#', 'right' : '$'},
-    \ 'rust'                :   {'left' : '/\/', 'right' : '$'},
-    \ 'nginx'               :   {'left' : '#', 'right' : '$'},
+    \ 'cpp'                 :   {'left' : '/\/'},
+    \ 'c'                   :   {'left' : '/\/'},
+    \ 'cs'                  :   {'left' : '/\/'},
+    \ 'sh'                  :   {'left' : '#'},
+    \ 'javascript'          :   {'left' : '/\/'},
+    \ 'typescript'          :   {'left' : '/\/'},
+    \ 'python'              :   {'left' : '#'},
+    \ 'vim'                 :   {'left' : '"'},
+    \ 'java'                :   {'left' : '/\/'},
+    \ 'php'                 :   {'left' : '/\/'},
+    \ 'go'                  :   {'left' : '/\/'},
+    \ 'dart'                :   {'left' : '/\/'},
+    \ 'scala'               :   {'left' : '/\/'},
+    \ 'dockerfile'          :   {'left' : '#'},
+    \ 'yaml.ansible'        :   {'left' : '#'},
+    \ 'yaml.docker-compose' :   {'left' : '#'},
+    \ 'yaml'                :   {'left' : '#'},
+    \ 'puppet'              :   {'left' : '#'},
+    \ 'awk'                 :   {'left' : '#'},
+    \ 'sql'                 :   {'left' : '--'},
+    \ 'terraform'           :   {'left' : '#'},
+    \ 'ruby'                :   {'left' : '#'},
+    \ 'kotlin'              :   {'left' : '/\/'},
+    \ 'r'                   :   {'left' : '#'},
+    \ 'rust'                :   {'left' : '/\/'},
+    \ 'nginx'               :   {'left' : '#'},
     \ 'markdown'            :   {'left' : '<!--', 'right' : '-->'},
     \ }
 
@@ -63,9 +63,11 @@ function! bettercomments#Enable()
     endif
 
     let comment_symbol_start = g:delimiter_filetype[&filetype]['left']
-    let comment_symbol_end = g:delimiter_filetype[&filetype]['right']
+    let comment_symbol_end = get(g:delimiter_filetype[&filetype], 'right', '$')
+
     let start_pattern = '\v\c\s*\' . comment_symbol_start
     let end_pattern = comment_symbol_end
+
     let information_pattern = '\s*\*' 
     let question_pattern = '\s*\?' 
     let attention_pattern = '\s*\!' 
