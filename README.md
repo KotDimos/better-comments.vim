@@ -12,9 +12,14 @@
 
 # Возможная конфигурация Vim.
 
+## Включение по команде
+
 Включение BetterComments по команде `\bc`.
 
     nnoremap <buffer> <localleader>bc :call bettercomments#Enable()<cr>
+
+
+## Автоматическое включение
 
 Автоматический запуск во всех файлах.
 
@@ -23,6 +28,8 @@
 Автоматический запуск только в определённых файлах.
 
     autocmd BufReadPost *.py call bettercomments#Enable()
+
+## Изменение цвета
 
 Дефолтные цвета.
 
@@ -61,6 +68,9 @@
 * Yellow, LightYellow
 * White
 
+
+## Добавление нового формата
+
 Если нужный язык отсутствует в стандартной конфигурации,
 можно добавить его самостоятельно.
 
@@ -69,3 +79,21 @@
         \ '<filetype>'        :   {'left' : '<comment_symbol>', 'right' : '<closing_comment_symbol>'},
         \ }
 
+Для того чтобы узнать какой тип файла у языка, откройте нужный файл и нажмите `:echo &filetype`.
+
+
+## Отключение части подсветок
+
+Для отключения некоторых подсветок.
+
+Стандартная модификация.
+
+    let g:other_color_enable = 1
+    let g:information_color_enable = 1
+    let g:question_color_enable = 1
+    let g:attention_color_enable = 1
+    let g:todo_color_enable = 1
+
+Если нужно отключить какую-то подсветку.
+
+    let g:todo_color_enable = 0
