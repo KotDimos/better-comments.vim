@@ -72,26 +72,36 @@ function! bettercomments#Enable()
     let question_pattern = '\s*\?' 
     let attention_pattern = '\s*\!' 
     let todo_pattern = '\s*(todo:|todo)' 
-    
-    execute 'syntax region BetterCommentsOther start=/' . start_pattern . '/ end=/' . end_pattern . '/'
-    execute 'highlight BetterCommentsOther ctermfg=' . g:other_color_ctermfg
-    execute 'highlight BetterCommentsOther guifg=' . g:other_color_guifg
+ 
+    if g:other_color_enable != 0
+        execute 'syntax region BetterCommentsOther start=/' . start_pattern . '/ end=/' . end_pattern . '/'
+        execute 'highlight BetterCommentsOther ctermfg=' . g:other_color_ctermfg
+        execute 'highlight BetterCommentsOther guifg=' . g:other_color_guifg
+    endif 
 
-    execute 'syntax region BetterCommentsInformation start=/' . start_pattern . information_pattern . '/ end=/' . end_pattern . '/'
-    execute 'highlight BetterCommentsInformation ctermfg=' . g:information_color_ctermfg
-    execute 'highlight BetterCommentsInformation guifg=' . g:information_color_guifg
+    if g:information_color_enable != 0
+        execute 'syntax region BetterCommentsInformation start=/' . start_pattern . information_pattern . '/ end=/' . end_pattern . '/'
+        execute 'highlight BetterCommentsInformation ctermfg=' . g:information_color_ctermfg
+        execute 'highlight BetterCommentsInformation guifg=' . g:information_color_guifg
+    endif 
 
-    execute 'syntax region BetterCommentsQuestion start=/' . start_pattern . question_pattern . '/ end=/' . end_pattern . '/'
-    execute 'highlight BetterCommentsQuestion ctermfg=' . g:question_color_ctermfg
-    execute 'highlight BetterCommentsQuestion guifg=' . g:question_color_guifg
+    if g:question_color_enable != 0
+        execute 'syntax region BetterCommentsQuestion start=/' . start_pattern . question_pattern . '/ end=/' . end_pattern . '/'
+        execute 'highlight BetterCommentsQuestion ctermfg=' . g:question_color_ctermfg
+        execute 'highlight BetterCommentsQuestion guifg=' . g:question_color_guifg
+    endif 
 
-    execute 'syntax region BetterCommentsAttention start=/' . start_pattern . attention_pattern . '/ end=/' . end_pattern  . '/'
-    execute 'highlight BetterCommentsAttention ctermfg=' . g:attention_color_ctermfg
-    execute 'highlight BetterCommentsAttention guifg=' . g:attention_color_guifg
+    if g:attention_color_enable != 0
+        execute 'syntax region BetterCommentsAttention start=/' . start_pattern . attention_pattern . '/ end=/' . end_pattern  . '/'
+        execute 'highlight BetterCommentsAttention ctermfg=' . g:attention_color_ctermfg
+        execute 'highlight BetterCommentsAttention guifg=' . g:attention_color_guifg
+    endif 
 
-    execute 'syntax region BetterCommentsTODO start=/' . start_pattern . todo_pattern . '/ end=/' . end_pattern . '/'
-    execute 'highlight BetterCommentsTODO ctermfg=' . g:todo_color_ctermfg
-    execute 'highlight BetterCommentsTODO guifg=' . g:todo_color_guifg
+    if g:todo_color_enable != 0
+        execute 'syntax region BetterCommentsTODO start=/' . start_pattern . todo_pattern . '/ end=/' . end_pattern . '/'
+        execute 'highlight BetterCommentsTODO ctermfg=' . g:todo_color_ctermfg
+        execute 'highlight BetterCommentsTODO guifg=' . g:todo_color_guifg
+    endif 
     
 endfunction
 

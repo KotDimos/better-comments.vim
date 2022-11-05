@@ -18,6 +18,12 @@ call s:InitVariable('g:question_color_ctermfg', 'blue')
 call s:InitVariable('g:attention_color_ctermfg', 'red')
 call s:InitVariable('g:todo_color_ctermfg', 'cyan')
 
+call s:InitVariable('g:other_color_enable', '1')
+call s:InitVariable('g:information_color_enable', '1')
+call s:InitVariable('g:question_color_enable', '1')
+call s:InitVariable('g:attention_color_enable', '1')
+call s:InitVariable('g:todo_color_enable', '1')
+
 command! -nargs=0 BetterCommentsEnable call bettercomments#Enable()
 command! -nargs=0 BetterCommentsDisable call bettercomments#Disable()
 
