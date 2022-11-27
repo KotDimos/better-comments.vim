@@ -53,12 +53,18 @@ endif
 
 function! bettercomments#Enable()
     if &filetype == ''
-        echo "BetterComments: file doesn't have file type"
+        if g:disable_messages == 0
+            echo "BetterComments: file doesn't have file type"
+        endif
+
         return 1
     endif
 
     if !has_key(g:delimiter_filetype, &filetype)
-        echo 'BetterComments: not found file type in list'
+        if g:disable_messages == 0
+            echo 'BetterComments: not found file type in list'
+        endif
+
         return 2
     endif
 

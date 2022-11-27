@@ -24,6 +24,8 @@ call s:InitVariable('g:question_color_enable', '1')
 call s:InitVariable('g:attention_color_enable', '1')
 call s:InitVariable('g:todo_color_enable', '1')
 
+call s:InitVariable('g:disable_messages', '0')
+
 command! -nargs=0 BetterCommentsEnable call bettercomments#Enable()
 command! -nargs=0 BetterCommentsDisable call bettercomments#Disable()
 
