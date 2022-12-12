@@ -16,6 +16,7 @@ let g:delimiter_filetype = {
     \ 'yaml.ansible'        :   {'left' : '#'},
     \ 'yaml.docker-compose' :   {'left' : '#'},
     \ 'yaml'                :   {'left' : '#'},
+    \ 'ini'                 :   {'left' : '#'},
     \ 'puppet'              :   {'left' : '#'},
     \ 'awk'                 :   {'left' : '#'},
     \ 'sql'                 :   {'left' : '--'},
